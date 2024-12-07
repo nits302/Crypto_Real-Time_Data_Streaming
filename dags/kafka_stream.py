@@ -2,27 +2,29 @@ import uuid
 import datetime
 import requests
 import json
-import time
 import logging
+import time
+import psycopg2
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from kafka import KafkaProducer
 
+logging.basicConfig(level=logging.INFO)
 
-# Hàm lấy dữ liệu từ API
+
+# https://api-invest.goonus.io/api/v1/currency?baseCurrency=USDT
 def get_data():
-    url = "https://api-invest.goonus.io/api/v1/currency?baseCurrency=USDT"
+    url = "https://api-invest.goonus.io/api/v1/currency?query=&tag="
     res = requests.get(url)
     res = res.json()
     return res
 
 
-# Hàm định dạng dữ liệu thành một danh sách các bản ghi phù hợp
 def format_data(res):
     data_list = []
     for crypto in res["data"]:
         rank = crypto.get("rank")
-        if rank and 1 <= rank <= 10:
+        if rank and 1 <= rank <= 11:
             data = {
                 "id": str(uuid.uuid4()),
                 "symbol": crypto.get("symbol"),
@@ -42,25 +44,87 @@ def format_data(res):
     return data_list
 
 
-# Hàm gửi dữ liệu tới Kafka
+def storage_data():
+    res = get_data()
+    data = format_data(res)
+    conn = psycopg2.connect(
+        host="postgres",
+        port="5432",
+        database="airflow",
+        user="airflow",
+        password="airflow",
+    )
+    cur = conn.cursor()
+
+    cur.execute(
+        """
+        CREATE TABLE IF NOT EXISTS cryptos (
+            id UUID PRIMARY KEY,
+            symbol VARCHAR(10),
+            name VARCHAR(100),
+            rank INTEGER,
+            price NUMERIC,
+            price_change_24h NUMERIC,
+            volume NUMERIC,
+            volume_24h NUMERIC,
+            volume_change_24h NUMERIC,
+            market_cap NUMERIC,
+            updated_at TIMESTAMP
+        )
+    """
+    )
+
+    for crypto in data:
+        id = crypto["id"]
+        symbol = crypto["symbol"]
+        name = crypto["name"]
+        rank = crypto["rank"]
+        price = crypto["price"]
+        price_change_24h = crypto["price_change_24h"]
+        volume = crypto["volume"]
+        volume_24h = crypto["volume_24h"]
+        volume_change_24h = crypto["volume_change_24h"]
+        market_cap = crypto["market_cap"]
+        updated_at = crypto["updated_at"]
+        cur.execute(
+            """
+            INSERT INTO cryptos (id, symbol, name, rank, price,
+            price_change_24h, volume, volume_24h,
+            volume_change_24h, market_cap, updated_at)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            """,
+            (
+                id,
+                symbol,
+                name,
+                rank,
+                price,
+                price_change_24h,
+                volume,
+                volume_24h,
+                volume_change_24h,
+                market_cap,
+                updated_at,
+            ),
+        )
+    conn.commit()
+    conn.close()
+    logging.info("Data stored successfully!")
+
+
 def stream_data():
-    # Cấu hình logging để dễ dàng kiểm tra lỗi
     logging.basicConfig(level=logging.INFO)
 
-    # Khởi tạo Kafka Producer
     producer = KafkaProducer(bootstrap_servers=["broker:29092"], max_block_ms=5000)
     curr_time = time.time()
 
-    # Vòng lặp để gửi dữ liệu trong khoảng thời gian 1 phút
     while True:
-        if time.time() > curr_time + 120:  # 1 minute
+        if time.time() > curr_time + 600:
             break
         try:
-            # Lấy và định dạng dữ liệu
             res = get_data()
             data_list = format_data(res)
 
-            # Gửi từng bản ghi trong data_list tới Kafka
             for data in data_list:
                 producer.send("cryptos_created", json.dumps(data).encode("utf-8"))
                 logging.info(f"Data sent to Kafka: {data}")
@@ -70,25 +134,24 @@ def stream_data():
     producer.close()
 
 
-# Thiết lập thông số mặc định cho DAG
 default_args = {
     "owner": "airscholar",
-    "start_date": datetime.datetime(2023, 9, 3, 10, 00),
+    "start_date": datetime.datetime(2024, 9, 3, 10, 00),
     "retries": 1,
 }
-# Định nghĩa DAG trong Airflow
+
 with DAG(
     "crypto_automation",
     default_args=default_args,
     schedule_interval="@daily",
     catchup=False,
 ) as dag:
-    # Thiết lập task PythonOperator để chạy hàm stream_data
+    storage_task = PythonOperator(
+        task_id="store_data_crypto",
+        python_callable=storage_data,
+    )
     streaming_task = PythonOperator(
         task_id="stream_data_crypto", python_callable=stream_data
     )
 
-# res = get_data()
-# result = format_data(res)
-# print(result)
-# stream_data()
+    storage_task >> streaming_task
