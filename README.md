@@ -1,6 +1,6 @@
-# Transforming User Insights: Real-Time Data Analysis with Kafka, Spark, PostgreSQL, Docker, Cassandra and Grafana
+# Transforming Crypto Insights: Real-Time Data Streaming with Kafka, Spark, PostgreSQL, Docker, Cassandra, and Grafana
 
-In today's data-driven world, real-time data analysis is crucial for businesses to make informed decisions swiftly. Our processing system harness <b>Kafka</b>, <b>Spark</b>, <b>PostgreSQL</b>, <b>Docker</b>, <b>Cassandra</b> and <b>Grafana</b>.
+In today's data-driven world, real-time data streaming is crucial for businesses to make informed decisions swiftly. Our processing system harness <b>Kafka</b>, <b>Spark</b>, <b>PostgreSQL</b>, <b>Docker</b>, <b>Cassandra</b> and <b>Grafana</b>.
 
 <p align="center">
   <img src="images/background.png" alt="Wallpaper">
