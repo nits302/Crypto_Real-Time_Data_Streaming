@@ -31,7 +31,7 @@ def create_table(session):
             volume_change_24h FLOAT,
             market_cap FLOAT,
             updated_at TIMESTAMP,
-            PRIMARY KEY (id, price, updated_at)
+            PRIMARY KEY ((symbol), updated_at)
         );
         """
     )
@@ -88,8 +88,8 @@ def create_spark_connection():
             SparkSession.builder.appName("SparkDataStreaming")
             .config(
                 "spark.jars.packages",
-                "com.datastax.spark:spark-cassandra-connector_2.13:3.4.1,"
-                "org.apache.spark:spark-sql-kafka-0-10_2.13:3.4.1",
+                "com.datastax.spark:spark-cassandra-connector_2.12:3.5.1,"
+                "org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.1",
             )
             .config("spark.cassandra.connection.host", "localhost")
             .getOrCreate()
