@@ -11,9 +11,13 @@ In the fast-paced world of cryptocurrency, real-time data streaming is essential
 The volatile and dynamic nature of crypto markets presents significant challenges:
 
 Outdated Insights: Manually updating data or relying on traditional systems results in delays and missed opportunities in fast-changing markets.
+
 Data Volume and Performance: Exponential growth in crypto data overwhelms legacy systems, leading to slow processing and higher costs.
+
 Data Integration Issues: Aggregating data from multiple exchanges often results in inconsistencies and poor data quality, delaying actionable insights.
+
 Monitoring and Latency: Without real-time monitoring, data pipeline issues such as data loss or corruption can go undetected, further impacting decision-making.
+
 Storage Bottlenecks: Inefficient storage systems struggle to handle high-throughput data, increasing retrieval latency and operational costs.
 
 ## Main Tasks
