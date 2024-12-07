@@ -20,21 +20,11 @@ Storage Bottlenecks: Inefficient storage systems struggle to handle high-through
 
 This project establishes a robust, real-time crypto data analysis platform, tackling the above challenges by leveraging modern data engineering tools and methodologies.
 
-Real-Time Data Capture:
-
-Ingest crypto data streams from exchanges and APIs in real time using Kafka, ensuring minimal latency.
-Scalable and Distributed Architecture:
-
-Utilize Spark and Cassandra to handle high data throughput and processing efficiently, ensuring scalability for growing crypto datasets.
-Data Quality and Validation:
-
-Employ schema management and real-time validation to maintain data accuracy and consistency.
-ETL Automation:
-
-Automate the data transformation process, from raw ingestion to structured analytics-ready storage in PostgreSQL, minimizing manual intervention.
-Comprehensive Monitoring and Visualization:
-
-Integrate Grafana for real-time dashboards, monitoring the health and performance of data streams while providing actionable market insights.
+- <b> Real-Time Data Capture: <b> Ingest crypto data streams from exchanges and APIs in real time using Kafka, ensuring minimal latency.
+- <b>Scalable and Distributed Architecture: <b> Utilize Spark and Cassandra to handle high data throughput and processing efficiently, ensuring scalability for growing crypto datasets.
+- <b> Data Quality and Validation: <b> Employ schema management and real-time validation to maintain data accuracy and consistency.
+- <b> ETL Automation: <b> Automate the data transformation process, from raw ingestion to structured analytics-ready storage in PostgreSQL, minimizing manual intervention.
+- <b> Comprehensive Monitoring and Visualization: <b> Integrate Grafana for real-time dashboards, monitoring the health and performance of data streams while providing actionable market insights.
 
 This project transforms raw crypto data into real-time actionable insights, enabling stakeholders to respond swiftly to market trends. With a scalable and efficient system, it minimizes data latency, enhances data quality, and empowers businesses to stay ahead in the competitive crypto landscape.
 
