@@ -30,16 +30,16 @@ The project aims to establish a real-time data analysis system for capturing and
 
 ### Project file:
 
-- `kafka_stream.py`: [kafka_stream.py](dags/kafka_stream.py) is created to fetches user data from [Api_randomuser](https://randomuser.me), processes and streams into a Kafka topic named `user_created`. The DAG in <b>Apache Airflow</b> employs PythonOperator to handle the task execution.
+- `kafka_stream.py`: [kafka_stream.py](dags/kafka_stream.py) is created to fetches user data from ONUS API, processes and streams into a Kafka topic named `crypto_created`. The DAG in <b>Apache Airflow</b> employs PythonOperator to handle the task execution.
 
-- `spark-streaming.py`: [spark-streaming.py](spark-streaming.py) is builded to create `cassandra_keyspace`, `cassandra_table`, `cassandra_connection`, `spark_connection`, `connect_to_kafka` and integration between them.
+- `crypto_streaming.py`: [crypto-streaming.py](crypto-streaming.py) is builded to create `cassandra_keyspace`, `cassandra_table`, `cassandra_connection`, `spark_connection`, `connect_to_kafka` and integration between them.
 
 ### Running project:
 
 1- Clone the repository:
 
 ```
-git clone https://github.com/ntd284/streaming_realtime_data.git
+git clone https://github.com/nits302/Crypto-Real-Time-Data-Streaming.git
 ```
 
 2- Navigate to the project directory
