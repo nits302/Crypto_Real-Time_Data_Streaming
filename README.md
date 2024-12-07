@@ -58,7 +58,7 @@ cd streaming_realtime_data
 
 ```
 pip3 install virtualenv
-python3 -m venv venv
+python -m venv venv
 source venv/bin/activate
 ```
 
@@ -91,7 +91,7 @@ Check containers in docker desktop:
 7- Run step by step files:
 
 ```
-python3 spark-streaming.py
+python crypto-streaming.py
 ```
 
 8- Access to airflow UI to monitor streaming process: `localhost:8080` with account: `admin`, password: `admin`
