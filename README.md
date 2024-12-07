@@ -35,7 +35,7 @@ This project transforms raw crypto data into real-time actionable insights, enab
 ## Getting Started
 
 ## 📁 Repository Structure
-
+```shell
 crypto-project/
 ├── .idea/                   # IDE-specific settings and configurations
 ├── crypto_stream.py         # Main script for crypto streaming
@@ -51,7 +51,7 @@ crypto-project/
 └── venv/                    # Python virtual environment
     ├── Lib/                 # Libraries and packages
     └── Scripts/             # Executables for the virtual environment
-
+```
 ### Project file:
 
 - `kafka_stream.py`: [kafka_stream.py](dags/kafka_stream.py) is created to fetches user data from ONUS API, processes and streams into a Kafka topic named `crypto_created`. The DAG in <b>Apache Airflow</b> employs PythonOperator to handle the task execution.
