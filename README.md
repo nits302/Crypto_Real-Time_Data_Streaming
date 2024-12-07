@@ -6,7 +6,7 @@ In the fast-paced world of cryptocurrency, real-time data streaming is essential
   <img src="images/background.png" alt="Wallpaper">
 </p>
 
-## The Challenge
+## 💥 Challenge
 
 The volatile and dynamic nature of crypto markets presents significant challenges:
 
@@ -34,22 +34,23 @@ This project transforms raw crypto data into real-time actionable insights, enab
 
 ## Getting Started
 
-### Repository Structure
+## 📁 Repository Structure
 
-- **.idea/**: Contains project-specific settings and configurations for the IDE.
-- **crypto_stream.py**: Main script for the crypto streaming project.
-- **dags/**: Contains DAGs (Directed Acyclic Graphs) for Airflow.
-  - **get_data.py**: Script to fetch data.
-  - **kafka_stream.py**: Script to handle Kafka streaming.
-- **docker-compose.yml**: Docker Compose configuration file.
-- **picture/**: Directory for storing images.
-- **README.md**: This file.
-- **requirements.txt**: List of Python dependencies.
-- **script/**: Contains shell scripts.
-  - **entrypoint.sh**: Entrypoint script for Docker.
-- **venv/**: Python virtual environment directory.
-  - **Lib/**: Contains site-packages and other libraries.
-  - **Scripts/**: Contains executables and scripts for the virtual environment.
+crypto-project/
+├── .idea/                   # IDE-specific settings and configurations
+├── crypto_stream.py         # Main script for crypto streaming
+├── dags/                    # Airflow DAGs
+│   ├── get_data.py          # Script for fetching data
+│   └── kafka_stream.py      # Script for handling Kafka streaming
+├── docker-compose.yml       # Docker Compose configuration file
+├── picture/                 # Directory for storing images
+├── README.md                # Project documentation file
+├── requirements.txt         # Python dependencies
+├── script/                  # Shell scripts
+│   └── entrypoint.sh        # Entrypoint script for Docker
+└── venv/                    # Python virtual environment
+    ├── Lib/                 # Libraries and packages
+    └── Scripts/             # Executables for the virtual environment
 
 ### Project file:
 
