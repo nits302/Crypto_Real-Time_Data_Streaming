@@ -20,7 +20,7 @@ The volatile and dynamic nature of crypto markets presents significant challenge
 
 - <b> Storage Bottlenecks: Inefficient storage systems struggle to handle high-throughput data, increasing retrieval latency and operational costs.
 
-## Main Tasks
+## 🔍 Main Tasks
 
 This project establishes a robust, real-time crypto data analysis platform, tackling the above challenges by leveraging modern data engineering tools and methodologies.
 
@@ -31,8 +31,6 @@ This project establishes a robust, real-time crypto data analysis platform, tack
 - <b> Comprehensive Monitoring and Visualization: <b> Integrate Grafana for real-time dashboards, monitoring the health and performance of data streams while providing actionable market insights.
 
 This project transforms raw crypto data into real-time actionable insights, enabling stakeholders to respond swiftly to market trends. With a scalable and efficient system, it minimizes data latency, enhances data quality, and empowers businesses to stay ahead in the competitive crypto landscape.
-
-## Getting Started
 
 ## 📁 Repository Structure
 ```shell
@@ -52,13 +50,13 @@ crypto-project/
     ├── Lib/                 # Libraries and packages
     └── Scripts/             # Executables for the virtual environment
 ```
-### Project file:
+###  📁  Project file:
 
 - `kafka_stream.py`: [kafka_stream.py](dags/kafka_stream.py) is created to fetches user data from ONUS API, processes and streams into a Kafka topic named `crypto_created`. The DAG in <b>Apache Airflow</b> employs PythonOperator to handle the task execution.
 
 - `crypto_streaming.py`: [crypto-streaming.py](crypto-streaming.py) is builded to create `cassandra_keyspace`, `cassandra_table`, `cassandra_connection`, `spark_connection`, `connect_to_kafka` and integration between them.
 
-### Running project:
+## 🚀 Getting Started
 
 1- Clone the repository:
 
