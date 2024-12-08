@@ -138,6 +138,11 @@ docker exec -it cassandra cqlsh -u cassandra -p cassandra localhost 9042
   <img src="picture/grafana.png" alt="Wallpaper">
 </p>
 
+
+## 🚀 Video DEMO
+
+[Demo Project Crypto Real-Time Data Streaming](https://www.youtube.com/watch?v=__8EhETsx5Y)
+
 ### Reference:
 
 [1]. [Realtime Data Streaming](https://www.youtube.com/watch?v=GqAcTrqKcrY)
