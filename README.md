@@ -132,10 +132,10 @@ docker exec -it cassandra cqlsh -u cassandra -p cassandra localhost 9042
   <img src="picture/cassandra.png" alt="Wallpaper">
 </p>
 
-11- Check Visualize in `Grafana`:
+11- Visualize in `Grafana`:
 
 <p align="center">
-  <img src="picture/grafana" alt="Wallpaper">
+  <img src="picture/grafana.png" alt="Wallpaper">
 </p>
 
 ### Reference:
