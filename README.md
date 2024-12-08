@@ -3,7 +3,7 @@
 In the fast-paced world of cryptocurrency, real-time data streaming is essential for tracking market trends, predicting price fluctuations, and making timely decisions. This project harnesses the power of cutting-edge technologies like <b>Kafka</b>, <b>Spark</b>, <b>PostgreSQL</b>, <b>Docker</b>, <b>Cassandra</b> and <b>Grafana</b> to build an efficient, scalable system for streaming and analyzing crypto data in real time.
 
 <p align="center">
-  <img src="images/background.png" alt="Wallpaper">
+  <img src="images/architecture.png" alt="Wallpaper">
 </p>
 
 ## 💥 Challenge
