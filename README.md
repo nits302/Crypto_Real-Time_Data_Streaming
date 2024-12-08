@@ -132,6 +132,12 @@ docker exec -it cassandra cqlsh -u cassandra -p cassandra localhost 9042
   <img src="picture/cassandra.png" alt="Wallpaper">
 </p>
 
+11- Check Visualize in `Grafana`:
+
+<p align="center">
+  <img src="picture/grafana" alt="Wallpaper">
+</p>
+
 ### Reference:
 
 [1]. [Realtime Data Streaming](https://www.youtube.com/watch?v=GqAcTrqKcrY)
