@@ -101,7 +101,7 @@ docker compose up -d
 Check containers in docker desktop:
 
 <p align="center">
-  <img src="images/docker_desktop.png" alt="Wallpaper">
+  <img src="picture/docker_desktop.png" alt="Wallpaper">
 </p>
 
 7- Run step by step files:
@@ -113,13 +113,13 @@ python crypto-streaming.py
 8- Access to airflow UI to monitor streaming process: `localhost:8080` with account: `admin`, password: `admin`
 
 <p align="center">
-  <img src="images/airflow.png" alt="Wallpaper">
+  <img src="picture/airflow.png" alt="Wallpaper">
 </p>
 
 9- Access to `control center UI` monitor Topic health, Procuder and consumer performance, Offset, Cluster health: `localhost:9021`
 
 <p align="center">
-  <img src="images/control-center.png" alt="Wallpaper">
+  <img src="picture/control_center.png" alt="Wallpaper">
 </p>
 
 10- Check data in `Cassandra` with command:
@@ -129,7 +129,7 @@ docker exec -it cassandra cqlsh -u cassandra -p cassandra localhost 9042
 ```
 
 <p align="center">
-  <img src="images/cassandra.png" alt="Wallpaper">
+  <img src="picture/cassandra.png" alt="Wallpaper">
 </p>
 
 ### Reference:
