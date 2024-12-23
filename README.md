@@ -124,9 +124,6 @@ python crypto-streaming.py
 
 10- Check data in `Cassandra` with command:
 
-```
-docker exec -it cassandra cqlsh -u cassandra -p cassandra localhost 9042
-```
 
 <p align="center">
   <img src="picture/cassandra.png" alt="Wallpaper">
