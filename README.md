@@ -6,29 +6,15 @@ In the fast-paced world of cryptocurrency, real-time data streaming is essential
   <img src="picture/architecture.png" alt="Wallpaper">
 </p>
 
-## Challenge
-
-The volatile and dynamic nature of crypto markets presents significant challenges:
-
-- Outdated Insights: Manually updating data or relying on traditional systems results in delays and missed opportunities in fast-changing markets.
-
-- Data Volume and Performance: Exponential growth in crypto data overwhelms legacy systems, leading to slow processing and higher costs.
-
-- Data Integration Issues: Aggregating data from multiple exchanges often results in inconsistencies and poor data quality, delaying actionable insights.
-
-- Monitoring and Latency: Without real-time monitoring, data pipeline issues such as data loss or corruption can go undetected, further impacting decision-making.
-
-- Storage Bottlenecks: Inefficient storage systems struggle to handle high-throughput data, increasing retrieval latency and operational costs.
-
 ## Main Tasks
 
 This project establishes a robust, real-time crypto data analysis platform, tackling the above challenges by leveraging modern data engineering tools and methodologies.
 
-- Real-Time Data Capture: <b> Ingest crypto data streams from exchanges and APIs in real time using Kafka, ensuring minimal latency.
-- Scalable and Distributed Architecture: <b> Utilize Spark and Cassandra to handle high data throughput and processing efficiently, ensuring scalability for growing crypto datasets.
-- Data Quality and Validation: <b> Employ schema management and real-time validation to maintain data accuracy and consistency.
-- ETL Automation: <b> Automate the data transformation process, from raw ingestion to structured analytics-ready storage in PostgreSQL, minimizing manual intervention.
-- Comprehensive Monitoring and Visualization: <b> Integrate Grafana for real-time dashboards, monitoring the health and performance of data streams while providing actionable market insights.
+- Real-Time Data Capture: Ingest crypto data streams from exchanges and APIs in real time using Kafka, ensuring minimal latency.
+- Scalable and Distributed Architecture: Utilize Spark and Cassandra to handle high data throughput and processing efficiently, ensuring scalability for growing crypto datasets.
+- Data Quality and Validation: Employ schema management and real-time validation to maintain data accuracy and consistency.
+- ETL Automation: Automate the data transformation process, from raw ingestion to structured analytics-ready storage in PostgreSQL, minimizing manual intervention.
+- Comprehensive Monitoring and Visualization: Integrate Grafana for real-time dashboards, monitoring the health and performance of data streams while providing actionable market insights.
 
 This project transforms raw crypto data into real-time actionable insights, enabling stakeholders to respond swiftly to market trends. With a scalable and efficient system, it minimizes data latency, enhances data quality, and empowers businesses to stay ahead in the competitive crypto landscape.
 
